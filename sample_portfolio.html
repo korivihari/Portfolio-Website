@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Harry - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;700&family=Source+Sans+3:ital,wght@1,300&display=swap" rel="stylesheet">
+    <style>
+       /* *{
+        margin: 0;
+        padding: 0;
+       } */
+       /* body {
+       font-family: "Montserrat";
+       text-align: center;
+       } */
+       body{
+        background-color: rgb(0,0,33);
+        color: white;
+        font-family: 'Poppins', sans-serif;
+       }
+       nav{
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           height: 80px;
+           background-color: rgb(18,18,62);
+       }
+       nav ul{
+            display: flex;
+            justify-content: center;
+       }
+       nav ul li{
+              margin:0 23px;
+              list-style: none;
+       }
+       nav ul li a{
+              text-decoration: none;
+              color: white;
+       }
+       nav ul li a:hover{
+              color: rgb(153, 153, 226);
+              font-size: 1.02rem;
+       }
+       
+    
+       main hr{
+        border: 0;
+        height: 1.2px;
+        margin : 40px 84px;
+        background: #9c97f1;
+       }
+       hr{
+        border: 0;
+        height: 1.2px;
+        margin : 40px 84px;
+        background: #9c97f1;
+       }
+       .left{
+           font-size: 1.5rem;
+       }
+       .right{
+        margin-left: 70px;
+       }
+       #home{
+        padding: 80px 0;
+        margin: 0 100px 0;
+       }
+       .firstsection{
+        /* display: flex;
+        margin: 80px 0;
+        justify-content: space-around;
+        align-items:center; */
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 100px 0;
+       }
+       
+       .leftsection{
+        /* background-color: red; */
+         font-size: 2.5rem;
+          margin: 70px 0px; 
+         font-style: bold;
+         flex-basis: 60%;
+       }
+      
+       .rightsection{
+        
+        flex-basis: 35%;
+        /* margin: 30px 0; */
+       }
+       .rightsection img{
+        width: 100px;
+         border-radius: 15%;
+       }
+       .purple{
+        color: blueviolet;
+       }
+       #element{
+        color: blueviolet;
+       }
+       
+     #about{
+        padding: 80px 0;
+        color: #ababab;
+        
+     }
+     .row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 100px 0;
+        
+     }
+     .about-col-1{
+        flex-basis: 35%;
+        
+     }
+     .about-col-1 img{
+         width: 100px;
+         border-radius: 15%;
+     }
+     .about-col-2{
+        flex-basis: 60%;
+     }
+     .sub-title{
+        font-size: 30px;
+        font-weight: 600;
+        color: #87C4FF;
+     }
+     .tab-titles{
+        display: flex;
+        margin:20px 0 40px;
+     }
+     .tab-links{
+        margin-right: 50px;
+        font-size:18px;
+        font-weight: 500;
+        cursor: pointer;
+         position: relative; 
+     }
+     .tab-links::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;
+
+     }
+     .tab-links.active-link::after{
+        width: 50%;
+     }
+     .tab-contents ul li{
+        list-style: none;
+        margin: 10px 0;
+     }
+     .tab-contents ul li span{
+       color: #b54769;
+       font-size: 14px;
+     }
+     .tab-contents{
+        display: none;
+     }
+    .tab-contents.active-tab{
+        display: block;
+     }
+     #my-skills{
+        margin: 0 100px 0;
+        padding: 30px 0;
+     }
+     .skills-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap:40px;
+        margin-top:50px;
+     }
+     .skills-list div{
+        background: #E0F4FF;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 300;
+        border-radius: 10px;
+        transition: background 0.5s,transform 0.5s;
+
+     }
+     .skills-list div i{
+        font-size: 50px;
+        margin-bottom:30px;
+     }
+     .skills-list div h2{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom:15px;
+     }
+     .skills-list div:hover{
+        background: #ff004f;
+        transform: transformY(-10px);
+     }
+     #portfolio{
+        margin: 0 100px 0;
+        padding: 50px 0;
+     }
+     .work-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap:40px;
+        margin-top:50px;
+     }
+     .work{
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+
+     }
+     .work img{
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.5s;
+     }
+     .layer{
+        width: 100%;
+        height: 0;
+        background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+        padding: 0 40px;
+        text-align: center;
+        font-size: 14px;
+        transition: height 0.5s;
+     }
+     .layer h3{
+        font-weight: 500;
+        margin-bottom: 20px;
+     }
+     .layer a{
+        margin-top: 20px;
+        color: #ff004f;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        background: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        text-align: center;
+     }
+     .work:hover img{
+        transform: scale(1.1)
+     }
+     .work:hover .layer{
+        height: 100%;
+     }
+     .btn{
+        display: block;
+        margin: 50px auto;
+        width: fit-content;
+        border: 1px solid #ff004f;
+        padding: 14px 50px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #fff;
+        transition: background 0.5s;
+     }
+     .btn:hover{
+        background: #ff004f;
+
+     }
+     .contact-left{
+        flex-basis: 35%;
+
+     }
+     .contact-right{
+        flex-basis: 60%;
+     }
+     .contact-left p{
+        margin-top: 30px;
+     }
+     .contact-left p i{
+        color: #ff004f;
+        margin-right: 15px;
+        font-size: 25px;
+     }
+     .social-icons{
+        margin-top: 30px;
+     }
+     .social-icons a{
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: #ababab;
+        display: inline-block;
+        transition: transform 0.5s;
+     }
+     .social-icons a:hover{
+        color: #ff004f;
+        transform: translateY(-5px);
+     }
+     .btn.btn2{
+        display: inline-block;
+        background: #ff004f;
+     }
+     .contact-right form{
+        width: 100%;
+
+     }
+     form input,form textarea{
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #262626;
+        padding: 15px;
+        margin: 15px 0;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 6px;
+     }
+     form btn2{
+        padding: 14px 60px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+     }
+     .copyright{
+        width: 100%;
+        text-align: center;
+        padding: 25px 0;
+        background: #89CFF3;
+        font-weight: 300;
+        margin-top: 20px;
+     }
+     .copyright i{
+        color:#ff004f;
+     }
+     /* nav .right .fa-regular {
+        display: none;
+     }
+     nav .right .fa-solid{
+        display: none;
+     }
+     @media only screen and (max-width: 500px){
+        .leftsection{
+            margin-top: 100%;
+            font-size: 16px;
+        }
+         nav .right .fa-regular {
+        display: block;
+        font-size: 25px;
+
+     } 
+      nav .right .fa-solid{
+        display: block;
+        font-size: 25px;
+     } 
+     nav .right ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -400px;
+        
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+     }
+     nav .right ul li{
+        display: block;
+        margin: 25px;
+     }
+     nav .right ul .fa-regular{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+     } */
+      /* nav .right  .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+     }   */
+     /*}*/
+      @media only screen and (max-width: 1028px) {
+
+     #title {
+      text-align: center;
+     }
+
+      .title-image {
+         position: static;
+         transform: rotate(0);
+        }
+    }
+    </style>
+      <script src="https://kit.fontawesome.com/32b0d14368.js" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+  </head>
+  <body>
+    <section id="title">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="navbar-brand left">
+                Harry Portfolio
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse right" id="navbarTogglerDemo02">
+                <ul id="navbar-nav ml-auto sidemenu">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#my-skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
+                    <!-- <i class="fa-regular fa-square-xmark" onclick="closemenu()"></i> -->
+                </ul>
+                <!-- <i class="fa-solid fa-bars" onclick="openmenu()"></i> -->
+            </div>
+        </nav>
+    </header>
+    <main id="home">
+        <section class="firstsection row">
+            <div class="leftsection about-col-1">
+                Hii, I'm <span class="purple">Harry</span> 
+                <div>I am a </div>
+                <!-- <div>Web Developer and Android Developer</div> -->
+                <span id="element"></span>
+            </div>
+            <div class="rightsection about-col-2">
+                <img class="title-image" src="bg.png" alt="profile">
+            </div>
+        </section>
+        <hr>
+    </main>
+</section>
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="" alt="My Photo">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <ul>
+                            <li>I am a Bachelor Student at Sri Venkateswara University, currently undertaking Computer Science Course</li>
+                            <li>I am a Passionate Student focus on <span class="purple">Frontend</span> and <span class="purple">Backend Web Technologies</span></li>
+                            <li>I am also <span class="purple">Android Developer</span></li>
+                            <li>Skilled at crafting responsive Websites and Mobile Applications</li>
+                            <li>I have worked on technologies like HTML,CSS,JavaScript,MongoDB,Node JS,Express JS</li> 
+                        </ul>
+                        <div class="tab-titles">
+                            <!-- <p class="tab-links active-link" onclick="opentab('skills')">Skills</p> -->
+                            <!-- <p class="tab-links active-link" onclick="opentab('education')">Education</p> -->
+                            <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                        </div>
+                        <!-- <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                 <li><span>App Development</span><br>Building Androi/ios app</li> 
+                            </ul>
+                        </div> -->
+                        <!-- <div class="tab-contents active-tab" id="education">
+                            <ul>
+                                <li><span>2020-Current</span><br>B.Tech </li>
+                                 <li><span>2018-2020</span><br>Intermediate</li> 
+                            </ul>
+                        </div> -->
+                         <div class="tab-contents active-tab" id="experience">
+                            <ul>
+                                <li><span>2022-2023</span><br>CodeClause Internship(1 month)</li>
+                                 <li><span>2022-2023</span><br>1stop Internship(3 months)</li> 
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    <!-- Skills -->
+    <div id="my-skills">
+        <div class="container">
+            <h1 class="sub-title">
+                My Skills
+            </h1>
+            <div class="skills-list">
+                <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <!--<p>ajfajljkajsldjja;</p>-->
+                </div>
+                <div>
+                    <i class="fa-brands fa-android"></i>
+                <h2>Android Development</h2>
+                <!--<p>ajfajljkajsldjja;</p>-->
+                </div>
+                <div>
+                    <i class="fa-brands fa-java"></i>
+                <h2>Java Programming</h2>
+                <!--<p>ajfajljkajsldjja;</p>-->
+            </div>
+                <div>
+                    <i class="fa-brands fa-python"></i>
+                <h2>Python Programming</h2>
+                <!--<p>ajfajljkajsldjja;</p>-->
+            </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- My work -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">
+                 My Work
+            </h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="bg.png" alt="work-1">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app connects you to the talented people around world</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png" alt="work-2">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app connects you to the talented people around world</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png" alt="work-3">
+                    <div class="layer">
+                        <h3>Shopping App</h3>
+                        <p>The app connects you to the talented people around world</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+
+    </div>
+    <hr>
+    <!-- contact -->
+    <center>
+    <div id="contact">
+        <div class="container">
+            
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>contact@example.com</p>
+                    <p>8888888888</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+
+                    </div>
+                        <a href="" download class="btn btn2">Download CV</a>
+                </div>
+                <!-- <div class="contact-right">
+                    <form action="">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" id=""  rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div> -->
+            
+        </div>
+        <div class="copyright">
+            <p>Copyright </p>
+        </div>
+    </div>
+</center>
+ <!-- <script>
+    var tablinks=document.getElementByClassName("tab-links");
+   var tabcontents=document.getElementByClassName("tab-contents");
+   function opentab(tabname){
+       for(tablink of tablinks){
+           tablink.classList.remove("active-link");
+       }
+       for(tabcontent of tabcontents){
+           tabcontent.classList.remove("active-tab");
+       }
+       event.currentTarget.classList.add("active-link");
+       document.getElementById(tabname).classList.add("active-tab");
+   }
+ </script>  -->
+     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Developer','Android Developer'],
+          typeSpeed: 50,
+        });
+       
+     </script> 
+      
+      <!-- <script>
+        var sidemeu=document.getElementById("sidemenu");
+        function openmenu(){
+            sidemeu.style.right="0";
+
+        }
+        function closemenu(){
+            sidemeu.style.right="-200px";
+            
+        }
+      </script> -->
+  </body>
+</html>
